@@ -6,13 +6,13 @@ pipeline {
     stages { 
         stage('SCM Checkout') {
             steps{
-            git 'https://github.com/ravdy/nodejs-demo.git'
+            git 'https://github.com/awskutty/nodejs-demo.git'
             }
         }
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t valaxy/nodeapp:$BUILD_NUMBER .'
+                sh 'docker build -t awskutty/nodeapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
